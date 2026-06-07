@@ -4,23 +4,23 @@ import requests
 
 URL = "https://minatopi.github.io/chanpro-api/data.json"
 
-ACCESS_TOKEN = os.environ["LINE_TOKEN"]
-USER_ID = os.environ["LINE_USER_ID"]
+ACCESS_TOKEN = os.environ.get("LINE_TOKEN")
+USER_ID = os.environ.get("LINE_USER_ID")
 
 CACHE_FILE = "cache.json"
 
 
+print("🚀 SCRIPT START")
+
+
 def send_line(msg):
+    print("📩 send_line called")
+
     url = "https://api.line.me/v2/bot/message/push"
 
     body = {
         "to": USER_ID,
-        "messages": [
-            {
-                "type": "text",
-                "text": msg
-            }
-        ]
+        "messages": [{"type": "text", "text": msg}]
     }
 
     headers = {
@@ -29,58 +29,85 @@ def send_line(msg):
     }
 
     try:
-        requests.post(url, json=body, headers=headers, timeout=10)
+        r = requests.post(url, json=body, headers=headers, timeout=10)
+        print("📩 LINE status:", r.status_code)
+        print("📩 LINE response:", r.text)
     except Exception as e:
-        print("LINE error:", e)
+        print("❌ LINE ERROR:", e)
 
 
 def load_cache():
+    print("📂 loading cache")
+
     if os.path.exists(CACHE_FILE):
         with open(CACHE_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            print("📂 cache loaded:", len(data))
+            return data
+
+    print("📂 no cache found")
     return {}
 
 
 def save_cache(data):
+    print("💾 saving cache:", len(data))
+
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def main():
-    old = load_cache()
+def fetch():
+    print("🌐 fetching data...")
 
     try:
-        new = requests.get(URL, timeout=10).json()
+        r = requests.get(URL, timeout=10)
+        print("🌐 status:", r.status_code)
+
+        data = r.json()
+        print("🌐 posts:", len(data.get("posts", [])))
+
+        return data
+
     except Exception as e:
-        print("Fetch error:", e)
+        print("❌ FETCH ERROR:", e)
+        return None
+
+
+def main():
+    old = load_cache()
+    new = fetch()
+
+    if not new:
+        print("❌ no data fetched")
         return
 
-    changes = []
+    changes = 0
 
-    for post in new.get("posts", []):
-        title = post["title"]
-        like = post["like"]
-        views = post["views"]
+    for p in new["posts"]:
+        title = p["title"]
+        like = p["like"]
+        views = p["views"]
+
+        print(f"🔎 check: {title}")
 
         if title in old:
-            o = old[title]
+            if old[title]["like"] != like or old[title]["views"] != views:
+                print("🔥 CHANGE DETECTED")
+                changes += 1
 
-            if o["like"] != like or o["views"] != views:
-                changes.append(
-                    f"📌 更新\n{title}\n"
-                    f"👍 like {o['like']} → {like}\n"
-                    f"👀 views {o['views']} → {views}"
+                send_line(
+                    f"📌 更新検知\n{title}\n"
+                    f"👍 {old[title]['like']}→{like}\n"
+                    f"👀 {old[title]['views']}→{views}"
                 )
 
-        old[title] = {
-            "like": like,
-            "views": views
-        }
+        old[title] = {"like": like, "views": views}
 
-    if changes:
-        send_line("\n\n".join(changes))
+    print("📊 total changes:", changes)
 
     save_cache(old)
+
+    print("✅ SCRIPT END")
 
 
 if __name__ == "__main__":
