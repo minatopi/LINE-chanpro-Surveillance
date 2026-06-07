@@ -1,32 +1,36 @@
-name: line-monitor
+name: debug-monitor
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/10 * * * *"
-  workflow_dispatch:
 
 permissions:
-  contents: write   # ★これ重要
+  contents: write
 
 jobs:
   run:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: python setup
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - run: pip install requests
+      - name: install
+        run: pip install requests
 
-      - run: python monitor.py
+      - name: run debug script
         env:
           LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
           LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: python -u monitor.py
 
-      - name: Commit cache
+      - name: commit cache
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
