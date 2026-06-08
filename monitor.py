@@ -28,7 +28,7 @@ def send_line(msg):
     try:
         r = requests.post(url, json=body, headers=headers, timeout=10)
         print("LINE status:", r.status_code)
-        print("LINE response:", r.text)
+        #print("LINE response:", r.text)
     except Exception as e:
         print("LINE error:", e)
 
@@ -55,7 +55,7 @@ def main():
     print("🚀 BOT START")
 
     # ★ここが重要：起動通知（必ず1回だけ）
-    send_line("🤖 Bot起動テスト：正常に動作しています")
+    #send_line("🤖 Bot起動テスト：正常に動作しています")
 
     old = load_cache()
     new = fetch()
