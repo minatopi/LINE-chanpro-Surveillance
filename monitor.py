@@ -55,7 +55,7 @@ def main():
     print("🚀 BOT START")
 
     # ★ここが重要：起動通知（必ず1回だけ）
-    #send_line("🤖 Bot起動テスト：正常に動作しています")
+    send_line("🤖 Bot起動テスト：正常に動作しています")
 
     old = load_cache()
     new = fetch()
