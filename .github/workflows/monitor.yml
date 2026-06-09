@@ -1,9 +1,9 @@
-name: debug-monitor
+name: Debug Monitor
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
 
 permissions:
   contents: write
@@ -13,27 +13,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: python setup
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: install
+      - name: Install dependencies
         run: pip install requests
 
-      - name: run debug script
-        env:
-          LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
-          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
-        run: python -u monitor.py
+      - name: Run monitor
+        run: python monitor.py
 
-      - name: commit cache
+      - name: Commit cache + heartbeat
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add cache.json || true
-          git commit -m "update cache" || echo "no changes"
-          git push || true
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+          git add cache.json heartbeat.json
+
+          git diff --staged --quiet || (
+            git commit -m "update heartbeat"
+            git push
+          )
