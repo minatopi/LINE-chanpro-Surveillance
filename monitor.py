@@ -9,12 +9,50 @@ URL = "https://minatopi.github.io/chanpro-api/data.json"
 CACHE_FILE = "cache.json"
 HEARTBEAT_FILE = "heartbeat.json"
 
+ACCESS_TOKEN = os.environ.get("LINE_TOKEN")
+USER_ID = os.environ.get("LINE_USER_ID")
 
+
+# =========================
+# LINE送信
+# =========================
+def send_line(msg: str):
+    if not ACCESS_TOKEN or not USER_ID:
+        print("LINE env missing, skip")
+        return
+
+    url = "https://api.line.me/v2/bot/message/push"
+
+    body = {
+        "to": USER_ID,
+        "messages": [
+            {"type": "text", "text": msg}
+        ]
+    }
+
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {ACCESS_TOKEN}"
+    }
+
+    try:
+        r = requests.post(url, json=body, headers=headers, timeout=10)
+        print("LINE status:", r.status_code)
+    except Exception as e:
+        print("LINE error:", e)
+
+
+# =========================
+# データ取得
+# =========================
 def fetch():
     r = requests.get(URL, timeout=10)
     return r.json()
 
 
+# =========================
+# キャッシュ
+# =========================
 def load_cache():
     if os.path.exists(CACHE_FILE):
         with open(CACHE_FILE, "r", encoding="utf-8") as f:
@@ -27,6 +65,9 @@ def save_cache(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+# =========================
+# heartbeat
+# =========================
 def save_heartbeat():
     with open(HEARTBEAT_FILE, "w", encoding="utf-8") as f:
         json.dump(
@@ -41,6 +82,9 @@ def save_heartbeat():
         )
 
 
+# =========================
+# メイン処理
+# =========================
 def main():
     print("🚀 BOT START")
 
@@ -55,7 +99,13 @@ def main():
         if title in old:
             if old[title]["like"] != p["like"] or old[title]["views"] != p["views"]:
                 changes += 1
-                print(f"CHANGE: {title}")
+
+                send_line(
+                    "📌 更新検知\n"
+                    f"{title}\n"
+                    f"👍 {old[title]['like']} → {p['like']}\n"
+                    f"👀 {old[title]['views']} → {p['views']}"
+                )
 
         old[title] = p
 
