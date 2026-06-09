@@ -1,26 +1,18 @@
 import os
 import json
 import requests
-from datetime import datetime
-from zoneinfo import ZoneInfo
+from datetime import datetime, timezone
 
 URL = "https://minatopi.github.io/chanpro-api/data.json"
-
-CACHE_FILE = "cache.json"
-HEARTBEAT_FILE = "heartbeat.json"
 
 ACCESS_TOKEN = os.environ.get("LINE_TOKEN")
 USER_ID = os.environ.get("LINE_USER_ID")
 
+CACHE_FILE = "cache.json"
+HEARTBEAT_FILE = "heartbeat.txt"
 
-# =========================
-# LINE送信
-# =========================
-def send_line(msg: str):
-    if not ACCESS_TOKEN or not USER_ID:
-        print("LINE env missing, skip")
-        return
 
+def send_line(msg):
     url = "https://api.line.me/v2/bot/message/push"
 
     body = {
@@ -42,17 +34,6 @@ def send_line(msg: str):
         print("LINE error:", e)
 
 
-# =========================
-# データ取得
-# =========================
-def fetch():
-    r = requests.get(URL, timeout=10)
-    return r.json()
-
-
-# =========================
-# キャッシュ
-# =========================
 def load_cache():
     if os.path.exists(CACHE_FILE):
         with open(CACHE_FILE, "r", encoding="utf-8") as f:
@@ -65,26 +46,21 @@ def save_cache(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-# =========================
-# heartbeat
-# =========================
-def save_heartbeat():
+def write_heartbeat():
+    now = datetime.now(timezone.utc).isoformat()
+
     with open(HEARTBEAT_FILE, "w", encoding="utf-8") as f:
-        json.dump(
-            {
-                "last_run": datetime.now(
-                    ZoneInfo("Asia/Tokyo")
-                ).isoformat()
-            },
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+        f.write(now)
+
+    print("🫀 heartbeat updated:", now)
 
 
-# =========================
-# メイン処理
-# =========================
+def fetch():
+    r = requests.get(URL, timeout=10)
+    r.raise_for_status()
+    return r.json()
+
+
 def main():
     print("🚀 BOT START")
 
@@ -94,17 +70,19 @@ def main():
     changes = 0
 
     for p in new.get("posts", []):
-        title = p["title"]
+        title = p.get("title")
+
+        if not title:
+            continue
 
         if title in old:
-            if old[title]["like"] != p["like"] or old[title]["views"] != p["views"]:
+            if old[title].get("like") != p.get("like") or old[title].get("views") != p.get("views"):
                 changes += 1
 
                 send_line(
-                    "📌 更新検知\n"
-                    f"{title}\n"
-                    f"👍 {old[title]['like']} → {p['like']}\n"
-                    f"👀 {old[title]['views']} → {p['views']}"
+                    f"📌 更新検知\n{title}\n"
+                    f"👍 {old[title].get('like')}→{p.get('like')}\n"
+                    f"👀 {old[title].get('views')}→{p.get('views')}"
                 )
 
         old[title] = p
@@ -112,7 +90,7 @@ def main():
     print("📊 changes:", changes)
 
     save_cache(old)
-    save_heartbeat()
+    write_heartbeat()
 
     print("✅ END")
 
