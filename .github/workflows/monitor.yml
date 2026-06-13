@@ -36,7 +36,7 @@ jobs:
           git config user.email "actions@github.com"
 
           git add cache.json heartbeat.txt || true
-
+          git add output.json heartbeat.txt || true
           git diff --cached --quiet && echo "no changes to commit" && exit 0
 
           git commit -m "update cache & heartbeat"
