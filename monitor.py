@@ -1,14 +1,14 @@
 import os
 import json
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 URL = "https://minatopi.github.io/chanpro-api/data.json"
 
 ACCESS_TOKEN = os.environ.get("LINE_TOKEN")
 USER_ID = os.environ.get("LINE_USER_ID")
 
-CACHE_FILE = "cache.json"
+CACHE_FILE = "output.json"
 HEARTBEAT_FILE = "heartbeat.txt"
 
 
@@ -38,7 +38,7 @@ def load_cache():
     if os.path.exists(CACHE_FILE):
         with open(CACHE_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
-    return {}
+    return []
 
 
 def save_cache(data):
@@ -61,31 +61,64 @@ def fetch():
     return r.json()
 
 
+def cleanup(data):
+    cutoff = datetime.now(timezone.utc) - timedelta(days=30)
+
+    result = []
+    for item in data:
+        try:
+            if datetime.fromisoformat(item["updated_at"]) >= cutoff:
+                result.append(item)
+        except Exception:
+            pass
+
+    return result
+
+
 def main():
     print("🚀 BOT START")
 
     old = load_cache()
     new = fetch()
 
+    now = datetime.now(timezone.utc).isoformat()
     changes = 0
+
+    old_map = {x["title"]: x for x in old if "title" in x}
 
     for p in new.get("posts", []):
         title = p.get("title")
-
         if not title:
             continue
 
-        if title in old:
-            if old[title].get("like") != p.get("like") or old[title].get("views") != p.get("views"):
+        prev = old_map.get(title)
+
+        if prev:
+            if prev.get("like") != p.get("like") or prev.get("views") != p.get("views"):
                 changes += 1
 
                 send_line(
                     f"📌 更新検知\n{title}\n"
-                    f"👍 {old[title].get('like')}→{p.get('like')}\n"
-                    f"👀 {old[title].get('views')}→{p.get('views')}"
+                    f"👍 {prev.get('like')}→{p.get('like')}\n"
+                    f"👀 {prev.get('views')}→{p.get('views')}"
                 )
 
-        old[title] = p
+                old.append({
+                    "title": title,
+                    "like": p.get("like"),
+                    "views": p.get("views"),
+                    "updated_at": now
+                })
+
+        else:
+            old.append({
+                "title": title,
+                "like": p.get("like"),
+                "views": p.get("views"),
+                "updated_at": now
+            })
+
+    old = cleanup(old)
 
     print("📊 changes:", changes)
 
