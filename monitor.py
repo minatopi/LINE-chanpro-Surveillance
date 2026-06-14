@@ -35,10 +35,15 @@ def send_line(msg):
 
 
 def load_cache():
-    if os.path.exists(CACHE_FILE):
+    if not os.path.exists(CACHE_FILE):
+        return []
+
+    try:
         with open(CACHE_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
-    return []
+    except Exception as e:
+        print("cache load error:", e)
+        return []
 
 
 def save_cache(data):
