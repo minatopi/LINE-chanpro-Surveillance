@@ -56,6 +56,7 @@ def load_json(path, default):
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
+
     except Exception as e:
         print(f"load error ({path}):", e)
         return default
@@ -183,16 +184,46 @@ def main():
 
         if (
             prev.get("like") != like
-            or
-            (
+            or (
                 prev.get("views") is not None
                 and views is not None
-                and (views - prev.get("views")) >= 2))
+                and (views - prev.get("views")) >= 2
+            )
         ):
             changes += 1
 
             msg = (
                 f"📌 更新検知\n"
+                f"{title}\n"
+                f"👍 {prev.get('like')} → {like}\n"
+                f"👀 {prev.get('views')} → {views}"
+            )
+
+            send_line(msg)
+
+            history.append({
+                "title": title,
+                "like_before": prev.get("like"),
+                "like_after": like,
+                "views_before": prev.get("views"),
+                "views_after": views,
+                "updated_at": now
+            })
+
+    history = cleanup_history(history)
+
+    save_json(CACHE_FILE, new_cache)
+    save_json(OUTPUT_FILE, history)
+
+    print("📊 changes:", changes)
+
+    write_heartbeat()
+
+    print("✅ END")
+
+
+if __name__ == "__main__":
+    main()                f"📌 更新検知\n"
                 f"{title}\n"
                 f"👍 {prev.get('like')}→{like}\n"
                 f"👀 {prev.get('views')}→{views}"
