@@ -187,8 +187,7 @@ def main():
             (
                 prev.get("views") is not None
                 and views is not None
-                and (views - prev.get("views")) >= 2
-    　　　　　)
+                and (views - prev.get("views")) >= 2))
         ):
             changes += 1
 
