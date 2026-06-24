@@ -158,5 +158,21 @@
     "views_before": 622,
     "views_after": 623,
     "updated_at": "2026-06-23T16:10:07.553395+00:00"
+  },
+  {
+    "title": "「マルバツゲーム（PythonコードをHTMLに変換したもの）」",
+    "like_before": 1,
+    "like_after": 2,
+    "views_before": 8,
+    "views_after": 9,
+    "updated_at": "2026-06-24T13:24:02.032099+00:00"
+  },
+  {
+    "title": "「自身のシェアプログラムの閲覧回数、評価をgithabによる自作APIを使い、管理を行うプログラム」",
+    "like_before": 1,
+    "like_after": 1,
+    "views_before": 9,
+    "views_after": 11,
+    "updated_at": "2026-06-24T13:24:02.032099+00:00"
   }
 ]
