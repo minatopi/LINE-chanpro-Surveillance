@@ -1,13 +1,5 @@
 [
   {
-    "title": "「YouTube(重すぎ)」",
-    "like_before": 6,
-    "like_after": 7,
-    "views_before": 50,
-    "views_after": 51,
-    "updated_at": "2026-07-08T13:06:29.874519+00:00"
-  },
-  {
     "title": "「翼をください（ともちゃんが流れ良く流れるようにしてくれました。>_<）　修正版」",
     "like_before": 160,
     "like_after": 161,
@@ -430,5 +422,13 @@
     "views_before": 290,
     "views_after": 296,
     "updated_at": "2026-08-07T00:24:41.321656+00:00"
+  },
+  {
+    "title": "「（実験）大丈夫《天気の子》　RADWIMPS【サウンドプログラミング】」",
+    "like_before": 1,
+    "like_after": 1,
+    "views_before": 5,
+    "views_after": 7,
+    "updated_at": "2026-08-07T13:08:07.367642+00:00"
   }
 ]
