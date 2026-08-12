@@ -2,14 +2,6 @@
   {
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　みんなの追加してほしい機能を追加しました！(通報、写真追加、参加者一覧...)」",
     "like_before": 15,
-    "like_after": 15,
-    "views_before": 88,
-    "views_after": 91,
-    "updated_at": "2026-07-13T13:25:35.110918+00:00"
-  },
-  {
-    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　みんなの追加してほしい機能を追加しました！(通報、写真追加、参加者一覧...)」",
-    "like_before": 15,
     "like_after": 16,
     "views_before": 91,
     "views_after": 92,
@@ -478,5 +470,13 @@
     "views_before": 0,
     "views_after": 0,
     "updated_at": "2026-08-12T13:14:01.378686+00:00"
+  },
+  {
+    "title": "「AI人狼」",
+    "like_before": 3,
+    "like_after": 4,
+    "views_before": 0,
+    "views_after": 0,
+    "updated_at": "2026-08-12T14:36:04.948300+00:00"
   }
 ]
