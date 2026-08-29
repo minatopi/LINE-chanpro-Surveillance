@@ -3,14 +3,6 @@
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　みんなの追加してほしい機能を追加しました！(通報、写真追加、アカウント化、ポイント機能...)」",
     "like_before": 46,
     "like_after": 46,
-    "views_before": 212,
-    "views_after": 215,
-    "updated_at": "2026-07-30T13:06:28.860276+00:00"
-  },
-  {
-    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　みんなの追加してほしい機能を追加しました！(通報、写真追加、アカウント化、ポイント機能...)」",
-    "like_before": 46,
-    "like_after": 46,
     "views_before": 217,
     "views_after": 219,
     "updated_at": "2026-08-01T04:52:31.906972+00:00"
@@ -950,5 +942,29 @@
     "views_before": 553,
     "views_after": 556,
     "updated_at": "2026-08-29T08:44:12.739644+00:00"
+  },
+  {
+    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
+    "like_before": 89,
+    "like_after": 89,
+    "views_before": 556,
+    "views_after": 559,
+    "updated_at": "2026-08-29T14:13:17.241387+00:00"
+  },
+  {
+    "title": "「（実験）アイドル　YOASOBI【サウンドプログラミング】」",
+    "like_before": 5,
+    "like_after": 5,
+    "views_before": 22,
+    "views_after": 25,
+    "updated_at": "2026-08-29T14:13:17.241387+00:00"
+  },
+  {
+    "title": "「AIvsAIのAI人狼！」",
+    "like_before": 2,
+    "like_after": 4,
+    "views_before": 27,
+    "views_after": 29,
+    "updated_at": "2026-08-29T14:13:17.241387+00:00"
   }
 ]
