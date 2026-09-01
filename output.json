@@ -1,29 +1,5 @@
 [
   {
-    "title": "「あいつら全員同窓会　ずっと真夜中でいいのに。【サウンドプログラミング】」",
-    "like_before": 63,
-    "like_after": 63,
-    "views_before": 116,
-    "views_after": 118,
-    "updated_at": "2026-08-02T07:32:48.927171+00:00"
-  },
-  {
-    "title": "「ピアノロール　超真っ黒ナイトオブナイト」",
-    "like_before": 0,
-    "like_after": 1,
-    "views_before": 0,
-    "views_after": 1,
-    "updated_at": "2026-08-02T07:32:48.927171+00:00"
-  },
-  {
-    "title": "「翼をください（ともちゃんが流れ良く流れるようにしてくれました。>_<）　修正版」",
-    "like_before": 161,
-    "like_after": 161,
-    "views_before": 861,
-    "views_after": 863,
-    "updated_at": "2026-08-02T11:23:11.180567+00:00"
-  },
-  {
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　みんなの追加してほしい機能を追加しました！(通報、写真追加、アカウント化、ポイント機能...)」",
     "like_before": 64,
     "like_after": 64,
@@ -1038,5 +1014,13 @@
     "views_before": 0,
     "views_after": 0,
     "updated_at": "2026-08-31T15:56:50.815304+00:00"
+  },
+  {
+    "title": "「Spotify風音楽共有プログラム(作成中)」",
+    "like_before": 7,
+    "like_after": 8,
+    "views_before": 0,
+    "views_after": 0,
+    "updated_at": "2026-09-01T11:55:17.265944+00:00"
   }
 ]
