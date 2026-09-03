@@ -1422,5 +1422,21 @@
     "views_before": 0,
     "views_after": 0,
     "updated_at": "2026-09-02T17:41:44.907203+00:00"
+  },
+  {
+    "title": "「AIvsAIのAI人狼！」",
+    "like_before": 4,
+    "like_after": 5,
+    "views_before": 31,
+    "views_after": 33,
+    "updated_at": "2026-09-03T16:00:29.368392+00:00"
+  },
+  {
+    "title": "「自身のシェアプログラムの閲覧回数、評価をgithabによる自作APIを使い、管理を行うプログラム」",
+    "like_before": 3,
+    "like_after": 4,
+    "views_before": 29,
+    "views_after": 30,
+    "updated_at": "2026-09-03T16:00:29.368392+00:00"
   }
 ]
