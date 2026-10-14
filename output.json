@@ -3,46 +3,6 @@
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
     "like_before": 92,
     "like_after": 92,
-    "views_before": 660,
-    "views_after": 669,
-    "updated_at": "2026-09-13T23:56:11.139486+00:00"
-  },
-  {
-    "title": "「ちゃんプロ専用Webコミュニティ(投稿サイト)」",
-    "like_before": 10,
-    "like_after": 11,
-    "views_before": 171,
-    "views_after": 177,
-    "updated_at": "2026-09-13T23:56:11.139486+00:00"
-  },
-  {
-    "title": "「YouTube(重すぎ)」",
-    "like_before": 8,
-    "like_after": 8,
-    "views_before": 91,
-    "views_after": 93,
-    "updated_at": "2026-09-13T23:56:11.139486+00:00"
-  },
-  {
-    "title": "「チャットボックスのポイントのランキング　top10」",
-    "like_before": 6,
-    "like_after": 6,
-    "views_before": 188,
-    "views_after": 192,
-    "updated_at": "2026-09-13T23:56:11.139486+00:00"
-  },
-  {
-    "title": "「夜の踊り子(一部)　サカナクション【サウンドプログラミング】」",
-    "like_before": 1,
-    "like_after": 1,
-    "views_before": 10,
-    "views_after": 12,
-    "updated_at": "2026-09-13T23:56:11.139486+00:00"
-  },
-  {
-    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
-    "like_before": 92,
-    "like_after": 92,
     "views_before": 669,
     "views_after": 673,
     "updated_at": "2026-09-14T23:21:28.717327+00:00"
@@ -886,5 +846,21 @@
     "views_before": 18,
     "views_after": 19,
     "updated_at": "2026-10-13T08:11:31.489896+00:00"
+  },
+  {
+    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
+    "like_before": 100,
+    "like_after": 101,
+    "views_before": 799,
+    "views_after": 803,
+    "updated_at": "2026-10-14T00:29:21.266373+00:00"
+  },
+  {
+    "title": "「ちゃんプロポスト(Xみたいなやつ)」",
+    "like_before": 14,
+    "like_after": 14,
+    "views_before": 286,
+    "views_after": 294,
+    "updated_at": "2026-10-14T00:29:21.266373+00:00"
   }
 ]
