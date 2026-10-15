@@ -3,22 +3,6 @@
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
     "like_before": 92,
     "like_after": 92,
-    "views_before": 669,
-    "views_after": 673,
-    "updated_at": "2026-09-14T23:21:28.717327+00:00"
-  },
-  {
-    "title": "「チャットボックスのポイントのランキング　top10」",
-    "like_before": 6,
-    "like_after": 6,
-    "views_before": 192,
-    "views_after": 194,
-    "updated_at": "2026-09-14T23:21:28.717327+00:00"
-  },
-  {
-    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
-    "like_before": 92,
-    "like_after": 92,
     "views_before": 673,
     "views_after": 675,
     "updated_at": "2026-09-15T23:29:57.698437+00:00"
@@ -862,5 +846,29 @@
     "views_before": 286,
     "views_after": 294,
     "updated_at": "2026-10-14T00:29:21.266373+00:00"
+  },
+  {
+    "title": "「円グラフを作成！【完全自作】」",
+    "like_before": 81,
+    "like_after": 82,
+    "views_before": 231,
+    "views_after": 231,
+    "updated_at": "2026-10-15T01:41:26.963526+00:00"
+  },
+  {
+    "title": "「ちゃんプロポスト(Xみたいなやつ)」",
+    "like_before": 14,
+    "like_after": 14,
+    "views_before": 294,
+    "views_after": 296,
+    "updated_at": "2026-10-15T01:41:26.963526+00:00"
+  },
+  {
+    "title": "「画面共有プログラム（実験）【完全AI生成】」",
+    "like_before": 1,
+    "like_after": 1,
+    "views_before": 43,
+    "views_after": 47,
+    "updated_at": "2026-10-15T01:41:26.963526+00:00"
   }
 ]
