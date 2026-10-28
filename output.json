@@ -3,30 +3,6 @@
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
     "like_before": 94,
     "like_after": 94,
-    "views_before": 723,
-    "views_after": 728,
-    "updated_at": "2026-09-27T23:17:44.868084+00:00"
-  },
-  {
-    "title": "「君の名は。予告再現（canvas＆base64）」",
-    "like_before": 3,
-    "like_after": 4,
-    "views_before": 45,
-    "views_after": 46,
-    "updated_at": "2026-09-27T23:17:44.868084+00:00"
-  },
-  {
-    "title": "「スクラッチ（埋め込みテスト）」",
-    "like_before": 0,
-    "like_after": 1,
-    "views_before": 6,
-    "views_after": 8,
-    "updated_at": "2026-09-27T23:17:44.868084+00:00"
-  },
-  {
-    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
-    "like_before": 94,
-    "like_after": 94,
     "views_before": 728,
     "views_after": 732,
     "updated_at": "2026-09-29T02:13:31.393250+00:00"
@@ -870,5 +846,13 @@
     "views_before": 1,
     "views_after": 3,
     "updated_at": "2026-10-26T23:59:43.416539+00:00"
+  },
+  {
+    "title": "「chanpro-gather(チャットとポスト統一)」",
+    "like_before": 103,
+    "like_after": 104,
+    "views_before": 908,
+    "views_after": 919,
+    "updated_at": "2026-10-28T00:17:57.994123+00:00"
   }
 ]
