@@ -3,22 +3,6 @@
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
     "like_before": 95,
     "like_after": 95,
-    "views_before": 753,
-    "views_after": 755,
-    "updated_at": "2026-10-04T01:52:36.108758+00:00"
-  },
-  {
-    "title": "「ちゃんプロAI（作成中）」",
-    "like_before": 2,
-    "like_after": 3,
-    "views_before": 9,
-    "views_after": 14,
-    "updated_at": "2026-10-04T01:52:36.108758+00:00"
-  },
-  {
-    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
-    "like_before": 95,
-    "like_after": 95,
     "views_before": 755,
     "views_after": 758,
     "updated_at": "2026-10-04T07:54:28.383024+00:00"
@@ -822,5 +806,13 @@
     "views_before": 950,
     "views_after": 953,
     "updated_at": "2026-11-02T07:25:28.736785+00:00"
+  },
+  {
+    "title": "「chanpro-gather(チャットとポスト統一)」",
+    "like_before": 104,
+    "like_after": 104,
+    "views_before": 953,
+    "views_after": 956,
+    "updated_at": "2026-11-03T06:31:01.785108+00:00"
   }
 ]
