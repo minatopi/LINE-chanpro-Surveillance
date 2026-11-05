@@ -2,30 +2,6 @@
   {
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
     "like_before": 95,
-    "like_after": 95,
-    "views_before": 758,
-    "views_after": 762,
-    "updated_at": "2026-10-06T02:25:24.085615+00:00"
-  },
-  {
-    "title": "「ちゃんプロ専用Webコミュニティ(投稿サイト)」",
-    "like_before": 12,
-    "like_after": 12,
-    "views_before": 243,
-    "views_after": 246,
-    "updated_at": "2026-10-06T02:25:24.085615+00:00"
-  },
-  {
-    "title": "「自分の位置が大体わかるプログラム(IP情報による)」",
-    "like_before": 1,
-    "like_after": 1,
-    "views_before": 5,
-    "views_after": 7,
-    "updated_at": "2026-10-06T02:25:24.085615+00:00"
-  },
-  {
-    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
-    "like_before": 95,
     "like_after": 96,
     "views_before": 762,
     "views_after": 769,
@@ -750,5 +726,13 @@
     "views_before": 956,
     "views_after": 962,
     "updated_at": "2026-11-04T01:05:16.175567+00:00"
+  },
+  {
+    "title": "「chanpro-gather(チャットとポスト統一)」",
+    "like_before": 104,
+    "like_after": 104,
+    "views_before": 962,
+    "views_after": 965,
+    "updated_at": "2026-11-05T02:40:32.439586+00:00"
   }
 ]
