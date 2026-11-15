@@ -3,30 +3,6 @@
     "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
     "like_before": 101,
     "like_after": 101,
-    "views_before": 804,
-    "views_after": 808,
-    "updated_at": "2026-10-15T23:45:03.667147+00:00"
-  },
-  {
-    "title": "「ちゃんプロポスト(Xみたいなやつ)」",
-    "like_before": 14,
-    "like_after": 14,
-    "views_before": 296,
-    "views_after": 305,
-    "updated_at": "2026-10-15T23:45:03.667147+00:00"
-  },
-  {
-    "title": "「チャットボックスのポイントのランキング　top10」",
-    "like_before": 10,
-    "like_after": 10,
-    "views_before": 236,
-    "views_after": 238,
-    "updated_at": "2026-10-15T23:45:03.667147+00:00"
-  },
-  {
-    "title": "「mqttを使ったチャットボックス(分散型履歴同期チャット)　まだまだ、拡張中！」",
-    "like_before": 101,
-    "like_after": 101,
     "views_before": 808,
     "views_after": 812,
     "updated_at": "2026-10-16T23:17:54.685125+00:00"
@@ -638,5 +614,21 @@
     "views_before": 264,
     "views_after": 268,
     "updated_at": "2026-11-14T02:39:05.595473+00:00"
+  },
+  {
+    "title": "「chanpro-gather(チャットとポスト統一)」",
+    "like_before": 104,
+    "like_after": 104,
+    "views_before": 1001,
+    "views_after": 1005,
+    "updated_at": "2026-11-15T00:51:10.920018+00:00"
+  },
+  {
+    "title": "「YouTube(重すぎ)」",
+    "like_before": 8,
+    "like_after": 8,
+    "views_before": 113,
+    "views_after": 115,
+    "updated_at": "2026-11-15T00:51:10.920018+00:00"
   }
 ]
