@@ -3,38 +3,6 @@
     "title": "「chanpro-gather(チャットとポスト統一)」",
     "like_before": 103,
     "like_after": 103,
-    "views_before": 875,
-    "views_after": 883,
-    "updated_at": "2026-10-25T00:04:05.201965+00:00"
-  },
-  {
-    "title": "「画面共有プログラム（実験）【完全AI生成】」",
-    "like_before": 2,
-    "like_after": 3,
-    "views_before": 51,
-    "views_after": 53,
-    "updated_at": "2026-10-25T00:04:05.201965+00:00"
-  },
-  {
-    "title": "「テスト」",
-    "like_before": 3,
-    "like_after": 3,
-    "views_before": 25,
-    "views_after": 27,
-    "updated_at": "2026-10-25T00:04:05.201965+00:00"
-  },
-  {
-    "title": "「chanpro-gather(チャットとポスト統一)」",
-    "like_before": 103,
-    "like_after": 103,
-    "views_before": 883,
-    "views_after": 889,
-    "updated_at": "2026-10-25T05:06:24.549615+00:00"
-  },
-  {
-    "title": "「chanpro-gather(チャットとポスト統一)」",
-    "like_before": 103,
-    "like_after": 103,
     "views_before": 889,
     "views_after": 895,
     "updated_at": "2026-10-25T23:03:28.259382+00:00"
@@ -374,5 +342,37 @@
     "views_before": 1014,
     "views_after": 1018,
     "updated_at": "2026-11-21T04:11:02.764230+00:00"
+  },
+  {
+    "title": "「chanpro-gather(チャットとポスト統一)」",
+    "like_before": 104,
+    "like_after": 104,
+    "views_before": 1032,
+    "views_after": 1043,
+    "updated_at": "2026-11-24T06:49:29.630840+00:00"
+  },
+  {
+    "title": "「千本桜　初音ミク【サウンドプログラミング】」",
+    "like_before": 6,
+    "like_after": 6,
+    "views_before": 60,
+    "views_after": 62,
+    "updated_at": "2026-11-24T06:49:29.630840+00:00"
+  },
+  {
+    "title": "「AIvsAIのAI人狼！」",
+    "like_before": 6,
+    "like_after": 6,
+    "views_before": 48,
+    "views_after": 52,
+    "updated_at": "2026-11-24T06:49:29.630840+00:00"
+  },
+  {
+    "title": "「自身のシェアプログラムの閲覧回数、評価をgithabによる自作APIを使い、管理を行うプログラム」",
+    "like_before": 4,
+    "like_after": 4,
+    "views_before": 35,
+    "views_after": 37,
+    "updated_at": "2026-11-24T06:49:29.630840+00:00"
   }
 ]
